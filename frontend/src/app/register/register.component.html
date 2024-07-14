@@ -1,0 +1,79 @@
+<body>
+  <div class="container register-box" style="max-width: 40%">
+    <div class="title">Registration</div>
+    <form [formGroup]="registerForm">
+    <div class="main-user-info">
+      <div class="row">
+        <div class="col">
+          <label>First Name</label>
+          <input
+          formControlName="firstName"
+            type="text"
+            class="form-control"
+            placeholder="First Name"
+          />
+      <span *ngIf="registerForm.hasError('required','firstName') && registerForm.controls['firstName'].dirty" style="color: red;">*FirstName is required</span>
+
+        </div>
+
+        <div class="col">
+          <label>Last Name</label>
+          <input
+            formControlName="lastName" 
+            type="text"
+            class="form-control"
+            placeholder="Last Name"
+          />
+      <span *ngIf="registerForm.hasError('required','lastName') && registerForm.controls['lastName'].dirty" style="color: red;">*LastName is required</span>
+
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label>Email address</label>
+        <input
+          formControlName="email"
+          type="email"
+          class="form-control"
+          placeholder="Email"
+        />
+      <span *ngIf="registerForm.hasError('required','email') && registerForm.controls['email'].dirty" style="color: red;">*Email is required</span>
+
+        <small id="emailHelp" class="form-text text-muted"
+          ></small
+        >
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input
+          formControlName="phone"
+          type="text"
+          class="form-control"
+          placeholder="Phone Number"
+        />
+      <span *ngIf="registerForm.hasError('required','phoneNo') && registerForm.controls['phoneNo'].dirty" style="color: red;">*PhoneNo is required</span>
+
+      </div>
+      <div class="row">
+        <div class="col">
+          <label>Password</label>
+          <input
+            formControlName="password"
+            type="password"
+            class="form-control"
+            placeholder="Password"
+          />
+      <span *ngIf="registerForm.hasError('required','password') && registerForm.controls['password'].dirty" style="color: red;">*Password is required</span>
+
+        </div>
+      </div>
+
+    </div>
+    <div class="register-btn">
+      <button (click)="register()" type="submit" class="btn btn-primary">Register</button>
+    </div>
+  </form>
+  </div>
+</body>
+
